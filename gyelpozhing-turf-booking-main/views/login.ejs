@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <body>
+        <div class="box">
+            <div class="form">
+                <form action="/login" method="POST" autocomplete="off">
+                    <h2>Sign in</h2>
+                    <div class="inputBox">
+                        <input type="email" name="email" required>
+                        <span>Email</span>
+                        <i></i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" name="password" required>
+                        <span>Password</span>
+                        <i></i>
+                    </div>
+                    <div class="links">
+                        <a href="forgotPassword">Forgot Password</a>
+                    </div>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+        <% if ((typeof errors!="undefined" && typeof errors.password!="undefined") ? errors.password.msg: "") { %>
+          <script>
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: "<%= errors.password.msg %>",
+            })
+            </script>
+        <% } %>
+        <% if ((typeof errors!="undefined" && typeof errors.email!="undefined") ? errors.email.msg: "") { %>
+          <script>
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: "<%= errors.email.msg %>",
+            })
+            </script>
+        <% } %>
+        <% if (typeof errorMessage !=="undefined" ) { %>
+          <script>
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: "<%= errorMessage %>",
+            })
+            </script>
+        <% } %>
+        <% if (typeof successMessage !== "undefined") { %>
+          <script>
+            swal({
+              title: "Good job!",
+              text: "<%= successMessage %>",
+              icon: "success",
+            });
+            </script>
+        <% } %>
+
+        <script type="text/javascript">
+          window.history.forward();
+          function noBack() {
+              window.history.forward();
+          }
+      </script>
+    </body>
+</html>

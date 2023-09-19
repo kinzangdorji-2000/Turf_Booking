@@ -1,0 +1,1711 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <h1>Register</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Makes POST request to /register route -->
+          <form action="/register" method="POST">
+
+            <% if (typeof errorMessage !== "undefined") { %>
+            <p class="alert alert-danger" role="alert"><%= errorMessage %></p>
+            <% } %>
+            <% if (typeof successMessage !== "undefined") { %>
+            <p class="alert alert-success" role="alert"><%= successMessage %></p>
+            <% } %>
+
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" class="form-control" name="name" value="<%=(typeof inputData!='undefined') ? inputData.name: ''%>">
+              <p style="color: red;"><%= (typeof errors!="undefined" && typeof errors.name!="undefined") ? errors.name.msg: ""%></p>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="email" value="<%=(typeof inputData!='undefined') ? inputData.email: ''%>">
+              <p style="color: red;"><%= (typeof errors!="undefined" && typeof errors.email!="undefined") ? errors.email.msg: ""%></p>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="number" class="form-control" name="phone" value="<%=(typeof inputData!='undefined') ? inputData.phone: ''%>">
+              <p style="color: red;"><%= (typeof errors!="undefined" && typeof errors.phone!="undefined") ? errors.phone.msg: ""%></p>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password" value="<%=(typeof inputData!='undefined') ? inputData.password: ''%>">
+              <p style="color: red;"><%= (typeof errors!="undefined" && typeof errors.password!="undefined") ? errors.password.msg: ""%></p>
+            </div>
+
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" class="form-control" name="confirmPassword" value="<%=(typeof inputData!='undefined') ? inputData.confirmPassword: ''%>">
+              <p style="color: red;"><%= (typeof errors!="undefined" && typeof errors.confirmPassword!="undefined") ? errors.confirmPassword.msg: ""%></p>
+            </div>
+            <button type="submit" class="btn btn-dark">Register</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<%- include('partials/header') %>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gyelpozhing Turf Booking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="owlcarousel/owl.carousel.css">
+  <link rel="stylesheet" href="owlcarousel/owl.theme.default.css">
+  <script src="owlcarousel/owl.carousel.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div class="top-container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: none;">
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+              <img class="header-logo" src="/Pictures/logo.png" alt="">
+            </div>
+            <div class="navbar-nav ms-auto">
+              <a href="/" class="nav-item nav-link">Home</a>
+              <a href="/showBookedUserList" class="nav-item nav-link">Ground Status</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="text-section">
+          <h1>Gyalpozhing Turf Booking</h1>
+          <h4>The most used type and best grass for football field in the football tournament </h4>
+          <h4>is super C artificial turf. This artificial grass model is one of the</h4>
+          <h4>highest standard artificial grass models.</h4>
+          <a href="/bookingForm" class="btn btn-secondary">Booked now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second-container -->
+  <div class="container-fluid second-container">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <img class="img-fluid" src="/Pictures/football2.jpg" alt="">
+      </div>
+      <div class="col-lg-8 col-md-8 col-sm-12">
+        <h1>Gyalpozhing Turf</h3>
+          <h4>"TURF is the go-to app for athletes and hobbyists looking to book & play their</h4>
+          <h4>sport. Bringing the community of athletes in the UAE to a single platform to book courts,</h4>
+          <h4>join games, find players, and track heir performance."</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- Third-container -->
+  <div class="container-fluid third-container-header">
+    <div class="row third-container-first-row">
+      <div class="col-lg-12 col-md-12 col-sm-12 third-container-first-column">
+        <div class="content-section">
+          <h1>Our Team</h1>
+          <h4>We are an interdisciplinary who look at your business with a single shared goal in mind to create an
+            effective <br> digital presence for your business. Working collaborately, we're able to achieve results that
+            are
+            creative <br> and strategic, with measurable business impact. We work hard, and we work smart.</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" />
+
+  <div class="container-fluid forth-container-header">
+    <div class="row owl-container">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <!-- Slideshow container -->
+        <div class="owl-carousel owl-theme" style="width: 100%; padding: 2rem 4rem;">
+
+          <div class="item">
+            <div class="owl">
+              <div class="owl-img"><img src="/Pictures/pema.jpeg" alt="" style="width: 80%;"></div>
+              <div class="main-text">
+                <h2>Pema Zangmo</h2>
+                <h3>Product Owner</h3>
+                <div class="socials">
+                  <i class="fa fa-facebook"></i>
+                  <i class="fa fa-linkedin"></i>
+                  <i class="fa fa-twitter"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="owl">
+              <div class="owl-img"><img src="/Pictures/choda.jpeg" style="width: 80%;" alt=""></div>
+              <div class="main-text">
+                <h2>Karma Choda</h2>
+                <h3>Scrum Master</h3>
+                <div class="socials">
+                  <i class="fa fa-facebook"></i>
+                  <i class="fa fa-linkedin"></i>
+                  <i class="fa fa-twitter"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="owl">
+              <div class="owl-img"><img src="/Pictures/cheki.jpeg" style="width: 80%;" alt=""></div>
+              <div class="main-text">
+                <h2>Cheki Lhamo</h2>
+                <h3>Developer</h3>
+                <div class="socials">
+                  <i class="fa fa-facebook"></i>
+                  <i class="fa fa-linkedin"></i>
+                  <i class="fa fa-twitter"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="owl">
+              <div class="owl-img"><img src="/Pictures/dg.jpeg" style="width: 80%;" alt=""></div>
+              <div class="main-text">
+                <h2>Dorji Gyeltshen</h2>
+                <h3>Developer</h3>
+                <div class="socials">
+                  <i class="fa fa-facebook"></i>
+                  <i class="fa fa-linkedin"></i>
+                  <i class="fa fa-twitter"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="owl">
+              <div class="owl-img"><img src="/Pictures/kinzang.jpeg" style="width: 80%;" alt=""></div>
+              <div class="main-text">
+                <h2>Kinzang Dorji</h2>
+                <h3>Developer</h3>
+                <div class="socials">
+                  <i class="fa fa-facebook"></i>
+                  <i class="fa fa-linkedin"></i>
+                  <i class="fa fa-twitter"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fifth-container -->
+  <div class="contianer-fluid">
+    <div class="row fifth-container">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <h2>Pricing</h2>
+        <h3>Check the price of turf for different season.</h3>
+        <div class="dayNight">
+          <span class="btn btn-secondary" onclick="change()">Summer Time</span><span class="span-2" onclick="changeWinter()">Winter Time</span>
+          <script>
+            function change(){
+              var x = document.getElementById("summer-time");
+              var y = document.getElementById("winter-time");
+              x.style.display = "block";
+              y.style.display = "none"
+            }
+            function changeWinter(){
+              var x = document.getElementById("summer-time");
+              var y = document.getElementById("winter-time");
+              if(y.style.display == "none"){
+                x.style.display = "none";
+                y.style.display = "block"
+              }
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Six-container -->
+  <div class="container-fluid summer-time" id="summer-time">
+    <div class="row six-container">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="dayNightTime">
+          <h2>Day Time1</h2>
+          <h3>Perfect for the season</h3>
+          <h2>Nu. 500<span>/match</span></h2>
+          <p class="lead">Up to 5 players</p>
+          <p class="lead">Collaboration features</p>
+          <p class="lead">Smart analytics</p>
+          <a href="/showBookedUserList" class="btn btn-secondary btn1">Check Status</a>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="dayNightTime dayNightTime1">
+          <h2>Night Time1</h2>
+          <h3>Perfect for the Health</h3>
+          <h2>Nu. 1000<span>/match</span></h2>
+          <p class="lead">Up to 5 players</p>
+          <p class="lead">Collaboration features</p>
+          <p class="lead">Smart analytics</p>
+          <a href="/showBookedUserList" class="btn btn-secondary">Check Status</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid winter-time" id="winter-time">
+    <div class="row six-container">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="dayNightTime2">
+          <h2>Day Time</h2>
+          <h3>Perfect for the season</h3>
+          <h2>Nu. 500<span>/match</span></h2>
+          <p class="lead">Up to 5 players</p>
+          <p class="lead">Collaboration features</p>
+          <p class="lead">Smart analytics</p>
+          <a href="/showBookedUserList" class="btn btn-secondary btn1">Check Status</a>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="dayNightTime2 dayNightTime1">
+          <h2>Night Time</h2>
+          <h3>Perfect for the Health</h3>
+          <h2>Nu. 1000<span>/match</span></h2>
+          <p class="lead">Up to 5 players</p>
+          <p class="lead">Collaboration features</p>
+          <p class="lead">Smart analytics</p>
+          <a href="/showBookedUserList" class="btn btn-secondary">Check Status</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row first-footer">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-1">
+        <img class="footer-logo" src="/Pictures/logo.png" alt="">
+        <div class="circle"></div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="first-footer-column">
+          <h2>Contact Us</h2>
+          <i class="fa fa-phone"></i><span>+97512345678</span><br>
+          <i class="fa fa-envelope"></i><span>test@gmail.com</span>
+          <div class="footer-socials">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-linkedin"></i>
+            <i class="fa fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="first-footer-column">
+          <h2>Feedback</h2>
+          <form action="/" method="POST">
+            <input name="email" type="email" placeholder="example.email@gmail.com" value="" required>
+            <p style="color: red; margin-bottom: 0px;"></p>
+            <textarea name="message" cols="20" rows="4" placeholder="Type your message here..." value=""
+              required></textarea>
+            <p style="color: red;"></p>
+            <button type="submit" class="btn btn-secondary">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row second-footer">
+      <div class="col-12">
+        <span>© 2022 Group 3. Agile Project</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+  </script>
+
+  <!--Jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"></script>
+  <!-- Owl Carousel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!-- custom JS code after importing jquery and owl -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $(".owl-carousel").owlCarousel();
+    });
+
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        750: {
+          items: 2
+        },
+        900: {
+          items: 2
+        },
+        1200: {
+          items: 3
+        },
+        1440: {
+          items: 4
+        }
+      }
+    })
+  </script>
+
+  <% if (typeof errorMessage !=="undefined" ) { %>
+    <script>
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "<%= errorMessage %>",
+      })
+    </script>
+    <% } %>
+      <% if (typeof successMessage !=="undefined" ) { %>
+        <script>
+          swal({
+            title: "Good job!",
+            text: "<%= successMessage %>",
+            icon: "success",
+          });
+        </script>
+        <% } %>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gyelpozhing Turf Booking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link rel="stylesheet" href="css/showBookedUserList.css">
+</head>
+
+<body>
+
+  <div class="main-container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse" style="margin-left: 2rem;margin-right: 2rem;">
+        <div class="navbar-nav">
+          <img class="header-logo" src="" alt="">
+        </div>
+        <div class="navbar-nav ms-auto">
+          <a href="/" class="nav-item nav-link">Home</a>
+          <a href="/showBookedUserList" class="nav-item nav-link">Ground Status</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-1">
+          <h2>Ground Status</h2>
+          <div class="detail">
+            <div class="row">
+              <div class="col-lg-4 col-md-4">
+                <p class="lead header">Name</p>
+              </div>
+              <div class="col-lg-2 col-md-2">
+                <p class="lead header">Date</p>
+              </div>
+              <div class="col-lg-2 col-md-2">
+                <p class="lead header">Time</p>
+              </div>
+              <div class="col-lg-2 col-md-2">
+                <p class="lead header">Day</p>
+              </div>
+              <div class="col-lg-2 col-md-2">
+                <p class="lead header">Status</p>
+              </div>
+            </div>
+          </div>
+          <% bookedRecords.forEach(function(records){ %>
+            <% if(records.isConfirm===true){ %>
+            <div class="detail">
+              <div class="row">
+                <div class="col-lg-4 col-md-4">
+                  <p class="lead info">
+                    <%=records.name%>
+                  </p>
+                </div>
+                <div class="col-lg-2 col-md-2">
+                  <p class="lead info">
+                    <%=records.date%>
+                  </p>
+                </div>
+                <div class="col-lg-2 col-md-2">
+                  <p class="lead info">
+                    <%=records.time%>
+                  </p>
+                </div>
+                <div class="col-lg-2 col-md-2">
+                  <p class="lead info">
+                    <%=records.day%>
+                  </p>
+                </div>
+                <% if(records.isConfirm===true){ %>
+                  <% var status="Booked" %>
+                <% }else{ %>
+                    <% var status="Pending" %>
+                <% } %>
+                <div class="col-lg-2 col-md-2">
+                  <p class="lead info">
+                    <%=status%>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <% } %>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <h2 class="sm">Ground Status</h2>
+        <% bookedRecords.forEach(function(records){ %>
+          <% if(records.isConfirm===true){ %>
+          <div class="col-sm-12 col-2">
+            <div class="card">
+              <div class="card-body">
+                <div class="attributes">
+                  <div class="row">
+                    <div class="col-sm-4 header-title">
+                      <h5>Name</h5>
+                      <p class="lead">Date</p>
+                      <p class="lead">Time</p>
+                      <p class="lead">Day</p>
+                      <p class="lead">Status</p>
+                    </div>
+                    <div class="col-sm-8 header-title-1">
+                      <h5>
+                        <%=records.name%>
+                      </h5>
+                      <p class="lead">
+                        <%=records.date%>
+                      </p>
+                      <p class="lead">
+                        <%=records.time%>
+                      </p>
+                      <p class="lead">
+                        <%=records.day%>
+                      </p>
+                      <% if(records.isConfirm===true){ %>
+                        <% var status="Booked" %>
+                        <% }else{ %>
+                            <% var status="Pending" %>
+                        <% } %>
+                        <p class="lead">
+                          <%=status%>
+                        </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% } %>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+  <div class="footer-container">
+    <div class="row second-footer">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <span>© 2022 Group 3. Agile Project</span>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyelpozhing Turf Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="css/bookedUserList.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'> 
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="container-fluid">
+        <div class="row">
+            <div class="menu-container col-lg-2 col-md-12 col-sm-12">
+                <div class="row">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
+                            data-bs-target="#navbarCollapse">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarCollapse">
+                            <div class="navbar-nav">
+                                <h1>LOGO</h1>
+                                <a href="/" class="nav-item nav-link"><span><img src="/Pictures/4.png" alt=""></span>Home</a>
+                                <a href="/bookedUserList" class="nav-item nav-link"><span><img src="/Pictures/2.png" alt=""></span>Booked List</a>
+                                <a href="/confirmBookedUserList" class="nav-item nav-link"><span><img src="/Pictures/1.png" alt=""></span>Paid List</a>
+                                <a href="/feedback" class="nav-item nav-link"><span><img src="/Pictures/3.png" alt=""></span>Feedback</a>
+                                <a href="/logout" class="nav-item nav-link"><span><img src="/Pictures/5.png" alt=""></span>LogOut</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="content-container col-lg-10 col-md-10 col-sm-12">
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 md1">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                  <img src="Pictures/8.png" class="icon" alt="">
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-10">
+                                  <% var count2 = 0 %>
+                                  <%bookedRecords.forEach(function(records){%>
+                                      <% count2++ %>
+                   
+                                    <%})%>
+                                    <h3 class="hh"><%= count2 %></h3>
+                                    <p class="lead">Total Booking Order</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 md1">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                  <img src="Pictures/7.png" class="icon" alt="">
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-10">
+                                  <% var count1 = 0 %>
+                                  <%bookedRecords.forEach(function(records){%>
+                                    
+                                    <%if(records.payment === false){%>
+                                      <% count1++ %>
+                                      <%}%>
+                                    <%})%>
+                                    <h3 class="hh"><%= count1 %></h3>
+                                    <p class="lead">Payment Pending</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 md1">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                  <img src="Pictures/6.png" class="icon" alt="">
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-10">
+                                  <% var count = 0 %>
+                                  <%bookedRecords.forEach(function(records){%>
+                                    
+                                    <%if(records.isConfirm === true){%>
+                                      <% count++ %>
+                                      <%}%>
+                                    <%})%>
+                                    <h3 class="hh"><%= count %></h3>
+                                    <p class="lead">Booked List</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="box-container content-scroll-bar">
+                    <div class="form-details">
+                      <h2>Total Booking Request</h2>
+                      <div class="detail">
+                        <div class="row">
+                          <div class="col-lg-2 col-md-2">
+                            <p class="lead header">Name</p>
+                          </div>
+                          <div class="col-lg-3 col-md-3">
+                            <p class="lead header">Email</p>
+                          </div>
+                          <div class="col-lg-2 col-md-2">
+                            <p class="lead header">Date</p>
+                          </div>
+                          <div class="col-lg-1 col-md-1">
+                            <p class="lead header">Time</p>
+                          </div>
+                          <div class="col-lg-1 col-md-1">
+                            <p class="lead header">Status</p>
+                          </div>
+                          <div class="col-lg-2 col-md-2">
+                            <p class="lead header">Payment</p>
+                          </div>
+                          <div class="col-lg-1 col-md-1">
+                            <p class="lead header">Action</p>
+                          </div>
+                        </div>
+                      </div>
+                      <% bookedRecords.forEach(function(records){ %>
+                        <div class="detail">
+                          <div class="row">
+                            <div class="col-lg-2 col-md-2">
+                              <p class="lead info">
+                                <%=records.name%>
+                              </p>
+                            </div>
+                            <div class="col-lg-3 col-md-3">
+                              <p class="lead info">
+                                <%=records.email%>
+                              </p>
+                            </div>
+                            <div class="col-lg-2 col-md-2">
+                              <p class="lead info">
+                                <%=records.date%>
+                              </p>
+                            </div>
+                            <div class="col-lg-1 col-md-1">
+                              <p class="lead info">
+                                <%=records.time%>
+                              </p>
+                            </div>
+                            <% if(records.isConfirm===true){ %>
+                              <% var status="Booked" %>
+                            <% }else{ %>
+                                <% var status="Pending" %>
+                            <% } %>
+                            <div class="col-lg-1 col-md-1">
+                              <p class="lead info">
+                                <%=status%>
+                              </p>
+                            </div>
+                            <% if(records.payment===true){ %>
+                              <% var status="Paid" %>
+                            <% }else{ %>
+                                <% var status="Pending" %>
+                            <% } %>
+                            <div class="col-lg-2 col-md-2">
+                              <p class="lead info">
+                                <%=status%>
+                              </p>
+                            </div>
+                            <div class="col-lg-1 col-md-1">
+                              <p class="lead info bi bi-three-dots-vertical" onclick="myFunction('<%=records._id%>')">
+                                <div class="hide" id="<%=records._id%>">
+                                <form action="/bookedUserList" method="POST">
+                                  <button name="submit" value="Confirm <%=records._id%>" type="submit" class="btn btn-primary">Confirm</button>
+                                  <button name="submit" value="Reject <%=records._id%>" type="submit" class="btn btn-danger">Reject</button>
+                                  <button name="submit" value="Paid <%=records._id%>" type="submit" class="btn btn-warning">Paid</button>
+                                </form>
+                              </div>
+                              </p>
+                              
+                            </div>
+                          </div>
+                        </div>
+                        <% }) %>
+                    </div>
+                </div>
+                <div class="content-container1">
+                  <h2>Total Booking Request</h2>
+                  <div class="row content-scroll-bar">
+                    <% bookedRecords.forEach(function(records){ %>
+                    <div class="col-lg-4 col-md-6 col-sm-6 md">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="attributes">
+                            <div class="row">
+                              <div class="col-md-4 col-sm-4 md-1">
+                                <h5>Name</h5>
+                                <p class="lead">Email</p>
+                                <p class="lead">Phone</p>
+                                <p class="lead">Date</p>
+                                <p class="lead">Time</p>
+                                <p class="lead">Day</p>
+                                <p class="lead">Status</p>
+                                <p class="lead">Payment</p>
+                              </div>
+                              <div class="col-md-8 col-sm-8 md-2">
+                                <h5><%=records.name%></h5>
+                                <p class="lead"><%=records.email%></p>
+                                <p class="lead"><%=records.phone%></p>
+                                <p class="lead"><%=records.date%></p>
+                                <p class="lead"><%=records.time%></p>
+                                <p class="lead"><%=records.day%></p>
+                                <% if(records.isConfirm === true){ %>
+                                <%  var status = "Booked" %>
+                                <% }else{ %>
+                                <% var status = "Pending" %>
+                                <% } %>
+                                <p class="lead"><%=status%></p>
+                                <% if(records.payment === true){ %>
+                                <%  var status = "Paid" %>
+                                <% }else{ %>
+                                <% var status = "Not paid" %>
+                                <% } %>
+                                <p class="lead"><%=status%></p>
+                              </div>
+                            </div>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <% }) %>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>   
+    <div class="footer-container">
+      <div class="row second-footer">
+        <div class="col-12">
+          <span>© 2022 Group 3. Agile Project</span>
+        </div>
+    </div>
+  <script>
+    function myFunction(id) {
+      var x = document.getElementById(id);
+      console.log(id);
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    </script>
+
+<% if (typeof errorMessage !=="undefined" ) { %>
+  <script>
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: "<%= errorMessage %>",
+    })
+    </script>
+<% } %>
+<% if (typeof successMessage !== "undefined") { %>
+  <script>
+    swal({
+      title: "Good job!",
+      text: "<%= successMessage %>",
+      icon: "success",
+    });
+    </script>
+<% } %>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gyelpozhing Turf Booking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
+  <script type="text/javascript"
+    src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css"
+    type="text/css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"
+    type="text/javascript"></script>
+  <link rel="stylesheet" href="css/bookingForm.css">
+</head>
+
+<body>
+  <div class="main-container">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse" style="margin-left: 2rem;margin-right: 2rem;">
+        <div class="navbar-nav">
+          <img class="header-logo" src="" alt="">
+        </div>
+        <div class="navbar-nav ms-auto">
+          <a href="/" class="nav-item nav-link">Home</a>
+          <a href="/showBookedUserList" class="nav-item nav-link">Details</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="image-container">
+            <h2>Enjoy your hobby!!</h2>
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="form-container">
+            <form action="/bookingForm" method="POST">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" class="form-control" name="name"
+                  value="<%=(typeof inputData!='undefined') ? inputData.name: ''%>">
+                <p style="color: red;">
+                  <%= (typeof errors!="undefined" && typeof errors.name!="undefined" ) ? errors.name.msg: "" %>
+                </p>
+              </div>
+  
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email"
+                  value="<%=(typeof inputData!='undefined') ? inputData.email: ''%>">
+                <p style="color: red;">
+                  <%= (typeof errors!="undefined" && typeof errors.email!="undefined" ) ? errors.email.msg: "" %>
+                </p>
+              </div>
+  
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="number" class="form-control" name="phone"
+                  value="<%=(typeof inputData!='undefined') ? inputData.phone: ''%>">
+                <p style="color: red;">
+                  <%= (typeof errors!="undefined" && typeof errors.phone!="undefined" ) ? errors.phone.msg: "" %>
+                </p>
+              </div>
+  
+              <div class="form-group">
+                <label for="date">Date</label>
+                <input id="txtDate" type="text" class="form-control date-input" name="date"
+                  value="<%=(typeof inputData!='undefined') ? inputData.date: ''%>" />
+                <p style="color: red;">
+                  <%= (typeof errors!="undefined" && typeof errors.date!="undefined" ) ? errors.date.msg: "" %>
+                </p>
+              </div>
+  
+              <div class="form-group">
+                <label for="time">Time</label>
+                <input class="form-control" name="time" type="time"
+                  value="<%=(typeof inputData!='undefined') ? inputData.time: ''%>">
+                <p style="color: red;">
+                  <%= (typeof errors!="undefined" && typeof errors.time!="undefined" ) ? errors.time.msg: "" %>
+                </p>
+              </div>
+  
+              <div class="form-group">
+                <label for="day">AM/PM</label>
+                <select name="day" class="form-select" aria-label="Default select example"
+                  value="<%=(typeof inputData!='undefined') ? inputData.day: ''%>">
+                  <option selected></option>
+                  <option value="AM">AM</option>
+                  <option value="PM">PM</option>
+                </select>
+                <p style="color: red;">
+                  <%= (typeof errors!="undefined" && typeof errors.day!="undefined" ) ? errors.day.msg: "" %>
+                </p>
+              </div>
+              <button type="submit" class="btn btn-secondary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-container">
+    <footer>
+      <div class="row second-footer">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <span>© 2022 Group 3. Agile Project</span>
+        </div>
+      </div>
+  </footer>
+  </div>
+  <% if (typeof errorMessage !=="undefined" ) { %>
+    <script>
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "<%= errorMessage %>",
+      })
+      </script>
+  <% } %>
+  <% if (typeof successMessage !== "undefined") { %>
+    <script>
+      swal({
+        title: "Good job!",
+        text: "<%= successMessage %>",
+        icon: "success",
+      });
+      </script>
+  <% } %>
+</body>
+
+</html>
+
+<script type="text/javascript">
+  $(function () {
+    $('#txtDate').datepicker({
+      format: "dd/mm/yyyy"
+    });
+  });
+</script>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gyelpozhing Turf Booking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link rel="stylesheet" href="css/login.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row content-scroll-bar">
+      <div class="col-lg-4 col-md-2 col-sm-12">
+        <div class="logo-section">
+          <img class="img-fluid football" src="/Pictures/ball.png" alt="">
+          <hr>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-12">
+        <div class="text-section">
+          <h4>GREAT TO HAVE</h4>
+          <h4>YOU BACK!</h4>
+          <p class="lead">Time to check and update the turf. Dont't forget to enjoy your day!!</p>
+          <img class="img-fluid football1" src="/Pictures/photo2.png" alt="">
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="row">
+          <div class="message-section">
+          
+          </div>
+        </div>
+        <div class="row">
+          <form action="/login" method="POST">
+            <h2>Sign in</h2>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" placeholder="example.email@gmail.com" class="form-control" name="email" value="">
+              <p style="color: red;"><%= (typeof errors!="undefined" && typeof errors.email!="undefined") ? errors.email.msg: ""%></p>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" placeholder="Enter at least 6+ characters" class="form-control" name="password"
+                value="">
+              <p style="color: red;"><%= (typeof errors!="undefined" && typeof errors.password!="undefined") ? errors.password.msg: ""%></p>
+            </div>
+            <a href="forgotPassword">Forgot password?</a>
+            <button type="submit" class="btn btn-secondary">Sign in</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-2 col-sm-12">
+        <img class="img-fluid football2" src="/Pictures/photo1.png" alt="">
+      </div>
+    </div>
+  </div>
+
+<% if (typeof errorMessage !=="undefined" ) { %>
+    <script>
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "<%= errorMessage %>",
+      })
+      </script>
+  <% } %>
+  <% if (typeof successMessage !== "undefined") { %>
+    <script>
+      swal({
+        title: "Good job!",
+        text: "<%= successMessage %>",
+        icon: "success",
+      });
+      </script>
+  <% } %>
+  <div class="row second-footer">
+    <div class="col-12">
+      <span>© 2022 Group 3. Agile Project</span>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyelpozhing Turf Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="css/forgotPassword.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
+  <body>
+
+    <div class="main-container">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="password-logo">
+              <img src="/Pictures/forgotPassword.png" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="form-section">
+              <h4>FORGOT <br> YOUR PASSWORD?</h4>
+              <form action="/forgotPassword" method="POST">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" placeholder="example.email@gmail.com" class="form-control" name="email" value="<%=(typeof inputData!='undefined') ? inputData.email: ''%>">
+                  <p style="color: red;"><%= (typeof errors!="undefined" && typeof errors.email!="undefined") ? errors.email.msg: ""%></p>
+                </div>
+              <button name="reset" value="reset" type="submit" class="btn btn-secondary">Reset</button>
+              </form>
+              <a href="login">Back to Sign in</a>
+            </div>
+          </div>
+        </div>
+        <% if (typeof errorMessage !=="undefined" ) { %>
+          <script>
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: "<%= errorMessage %>",
+            })
+            </script>
+        <% } %>
+        <% if (typeof successMessage !== "undefined") { %>
+          <script>
+            swal({
+              title: "Good job!",
+              text: "<%= successMessage %>",
+              icon: "success",
+            });
+            </script>
+        <% } %>
+      </div>
+    </div>
+    <div class="footer-container">
+      <div class="row second-footer">
+        <div class="col-12">
+            <span>© 2022 Group 3. Agile Project</span>
+        </div>
+    </div>
+    </div>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gyelpozhing Turf Booking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link rel="stylesheet" href="css/resetPasswordForm.css">
+</head>
+
+<body>
+
+  <div class="main-container">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <h4>New Password</h4>
+          <form action="/resetPasswordForm" method="POST">
+  
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" placeholder="Enter at least 6+ characters" class="form-control" name="password"
+                value="<%=(typeof inputData!='undefined') ? inputData.password: ''%>">
+              <p style="color: red;">
+                <%= (typeof errors!="undefined" && typeof errors.password!="undefined" ) ? errors.password.msg: "" %>
+              </p>
+            </div>
+  
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" class="form-control" placeholder="Enter confirm password" name="confirmPassword"
+                value="<%=(typeof inputData!='undefined') ? inputData.confirmPassword: ''%>">
+              <p style="color: red;">
+                <%= (typeof errors!="undefined" && typeof errors.confirmPassword!="undefined" ) ?
+                  errors.confirmPassword.msg: "" %>
+              </p>
+            </div>
+            <button type="submit" class="btn btn-secondary">Done</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-container">
+    <div class="row second-footer">
+      <div class="col-12">
+        <span>© 2022 Group 3. Agile Project</span>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gyelpozhing Turf Booking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="css/userPaymentForm.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+
+  <div class="main-container">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="screenshoot">
+            <h4>Scan to Pay</h4>
+            <img src="Pictures/QR.png" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="payment-form">
+            <form action="/userPaymentForm" method="POST" enctype="multipart/form-data">
+              <h4>Payment Form</h4>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" value="" required>
+              </div>
+              <div class="form-group">
+                <label for="image">Attach Payment Screenshoot</label>
+                <input type="file" id="image" class="form-control" name="image" value="" required>
+              </div>
+              <button type="submit" class="btn btn-secondary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-container">
+    <div class="row second-footer">
+      <div class="col-12">
+        <span>© 2022 Group 3. Agile Project</span>
+      </div>
+    </div>
+  </div>
+
+  <% if (typeof errorMessage !=="undefined" ) { %>
+    <script>
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "<%= errorMessage %>",
+      })
+      </script>
+  <% } %>
+  <% if (typeof successMessage !== "undefined") { %>
+    <script>
+      swal({
+        title: "Good job!",
+        text: "<%= successMessage %>",
+        icon: "success",
+      });
+      </script>
+  <% } %>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyelpozhing Turf Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="css/confirmBookedUserList.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'> 
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="menu-container col-lg-2 col-md-2 col-sm-12">
+              <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
+                        data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                      <div class="navbar-nav">
+                        <h1>LOGO</h1>
+                        <a href="/" class="nav-item nav-link"><span><img src="/Pictures/4.png" alt=""></span>Home</a>
+                        <a href="/bookedUserList" class="nav-item nav-link"><span><img src="/Pictures/2.png" alt=""></span>Booked List</a>
+                        <a href="/confirmBookedUserList" class="nav-item nav-link"><span><img src="/Pictures/1.png" alt=""></span>Paid List</a>
+                        <a href="/feedback" class="nav-item nav-link"><span><img src="/Pictures/3.png" alt=""></span>Feedback</a>
+                        <a href="/logout" class="nav-item nav-link"><span><img src="/Pictures/5.png" alt=""></span>LogOut</a>
+                    </div>
+                    </div>
+                </nav>
+              </div>
+          </div>
+          <div class="content-container col-lg-10 col-md-10 col-sm-12">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 md1">
+                  <div class="card">
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="col-lg-2 col-md-2 col-sm-2">
+                                  <img src="Pictures/8.png" class="icon" alt="">
+                              </div>
+                              <div class="col-lg-10 col-md-10 col-sm-10">
+                                <% var counts = 0 %>
+                                <%bookedRecords.forEach(function(records){%>
+                                    <% counts++ %>
+                                  <%})%>
+                                  <h3 class="hh"><%= counts %></h3>
+                                  <p class="lead">Total Booking Order</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 md1">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2">
+                              <img src="Pictures/7.png" class="icon" alt="">
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-sm-10">
+                              <% var count = 0 %>
+                              <%bookedRecords.forEach(function(records){%>
+                                <%if(records.payment === false){%>
+                                  <% count++ %>
+                                  <%}%>
+                                <%})%>
+                                <h3 class="hh"><%= count %></h3>
+                                <p class="lead">Payment Pending</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 md1">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2">
+                              <img src="Pictures/6.png" class="icon" alt="">
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-sm-10">
+                              <% var counts1 = 0 %>
+                              <%bookedRecords.forEach(function(records){%>
+                                
+                                <%if(records.isConfirm === true){%>
+                                  <% counts1++ %>
+                                  <%}%>
+                                <%})%>
+                                <h3 class="hh"><%= counts1 %></h3>
+                                <p class="lead">Booked List</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="box-container .content-scroll-bar">
+                <div class="form-details">
+                  <h2>Paid List</h2>
+                  <div class="detail">
+                    <div class="row">
+                      <div class="col-lg-2 col-md-2">
+                        <p class="lead header">Name</p>
+                      </div>
+                      <div class="col-lg-3 col-md-3">
+                        <p class="lead header">Email</p>
+                      </div>
+                      <div class="col-lg-2 col-md-2">
+                        <p class="lead header">Date</p>
+                      </div>
+                      <div class="col-lg-1 col-md-1">
+                        <p class="lead header">Time</p>
+                      </div>
+                      <div class="col-lg-1 col-md-1">
+                        <p class="lead header">Status</p>
+                      </div>
+                      <div class="col-lg-2 col-md-2">
+                        <p class="lead header">Payment</p>
+                      </div>
+                      <div class="col-lg-1 col-md-1">
+                        <p class="lead header">Action</p>
+                      </div>
+                    </div>
+                  </div>
+                  <% bookedRecords.forEach(function(records){ %>
+                    <div class="detail">
+                      <div class="row">
+                        <div class="col-lg-2 col-md-2">
+                          <p class="lead info">
+                            <%=records.name%>
+                          </p>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                          <p class="lead info">
+                            <%=records.email%>
+                          </p>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                          <p class="lead info">
+                            <%=records.date%>
+                          </p>
+                        </div>
+                        <div class="col-lg-1 col-md-1">
+                          <p class="lead info">
+                            <%=records.time%>
+                          </p>
+                        </div>
+                        <% if(records.isConfirm===true){ %>
+                          <% var status="Booked" %>
+                        <% }else{ %>
+                            <% var status="Pending" %>
+                        <% } %>
+                        <div class="col-lg-1 col-md-1">
+                          <p class="lead info">
+                            <%=status%>
+                          </p>
+                        </div>
+                        <% if(records.payment===true){ %>
+                          <% var status="Paid" %>
+                        <% }else{ %>
+                            <% var status="Pending" %>
+                        <% } %>
+                        <div class="col-lg-2 col-md-2">
+                          <p class="lead info">
+                            <%=status%>
+                          </p>
+                        </div>
+                        <div class="col-lg-1 col-md-1">
+                          <p class="lead info">
+                            <form action="/confirmBookedUserList" method="POST">
+                              <button name="done" value="<%=records._id%>" type="submit" class="btn">Done</button>
+                            </form>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <% }) %>
+                </div>
+        </div>
+        <div class="content-container1">
+              <h2>Total Booking Request</h2>
+              <div class="row .content-scroll-bar">
+                <% bookedRecords.forEach(function(records){ %>
+            
+                <div class="col-lg-4 col-md-6 col-sm-6 md">
+                  <div class="card">
+                    <% if(records.img.data === undefined){ %>
+                      <p class="lead" style="margin-left: 1rem;">Payment not made.</p>
+                      <% }else{ %>
+                        <img class="card-img-top" src="data:records/<%=records.img.contentType %>;base64,<%= records.img.data.toString("base64")%>">
+                    <% } %>
+                    <div class="card-body">
+                      <div class="attributes">
+                        <div class="row">
+                          <div class="col-lg-4 col-md-4 col-sm-4 md-1">
+                            <h5>Name</h5>
+                            <p class="lead">Email</p>
+                            <p class="lead">Phone</p>
+                            <p class="lead">Date</p>
+                            <p class="lead">Time</p>
+                            <p class="lead">Day/Night</p>
+                            <p class="lead">Status</p>
+                            <p class="lead">Payment</p>
+                          </div>
+                          <div class="col-lg-8 col-md-8 col-sm-8 md-2">
+                            <h5><%=records.name%></h5>
+                            <p class="lead"><%=records.email%></p>
+                            <p class="lead"><%=records.phone%></p>
+                            <p class="lead"><%=records.date%></p>
+                            <p class="lead"><%=records.time%></p>
+                            <p class="lead"><%=records.day%></p>
+                            <% if(records.isConfirm === true){ %>
+                            <%  var status = "Booked" %>
+                            <% }else{ %>
+                            <% var status = "Pending" %>
+                            <% } %>
+                            <p class="lead"><%=status%></p>
+                            <% if(records.payment === true){ %>
+                            <%  var status = "Paid" %>
+                            <% }else{ %>
+                            <% var status = "Not paid" %>
+                            <% } %>
+                            <p class="lead"><%=status%></p>
+                          </div>
+                        </div>
+                      </div>
+                      <form action="/confirmBookedUserList" method="POST">
+                        <button name="done" value="<%=records._id%>" type="submit" class="btn btn-secondary btn1">Done</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <% }) %>
+              </div>
+        </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+    <div class="footer-container">
+      <div class="row second-footer">
+        <div class="col-12">
+          <span>© 2022 Group 3. Agile Project</span>
+        </div>
+      </div>
+    </div>
+    <% if (typeof errorMessage !=="undefined" ) { %>
+      <script>
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: "<%= errorMessage %>",
+        })
+        </script>
+    <% } %>
+    <% if (typeof successMessage !== "undefined") { %>
+      <script>
+        swal({
+          title: "Good job!",
+          text: "<%= successMessage %>",
+          icon: "success",
+        });
+        </script>
+    <% } %>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyelpozhing Turf Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="css/feedback.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'> 
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="container-fluid">
+        <div class="row">
+            <div class="menu-container col-lg-2 col-md-12 col-sm-12">
+                <div class="row">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
+                            data-bs-target="#navbarCollapse">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarCollapse">
+                          <div class="navbar-nav">
+                            <h1>LOGO</h1>
+                            <a href="/" class="nav-item nav-link"><span><img src="/Pictures/4.png" alt=""></span>Home</a>
+                            <a href="/bookedUserList" class="nav-item nav-link"><span><img src="/Pictures/2.png" alt=""></span>Booked List</a>
+                            <a href="/confirmBookedUserList" class="nav-item nav-link"><span><img src="/Pictures/1.png" alt=""></span>Paid List</a>
+                            <a href="/feedback" class="nav-item nav-link"><span><img src="/Pictures/3.png" alt=""></span>Feedback</a>
+                            <a href="/logout" class="nav-item nav-link"><span><img src="/Pictures/5.png" alt=""></span>LogOut</a>
+                          </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="content-container col-lg-10 col-md-10 col-sm-12">
+              <div class="box-container">
+                <h2>Feedbacks</h2>
+                <div class="row">
+                  <% feedback.forEach(function(records){ %>
+                  <div class="col-lg-12 col-md-12 col-sm-12 md">
+                    <div class="card">
+                      <div class="card-body">
+                        <h4><%=records.email%></h4>
+                        <p class="lead"><%=records.message%></p>
+                          <form action="/feedback" method="POST">
+                            <button name="read" value="Reply <%=records._id%>" type="submit" class="btn btn-secondary">Reply</button>
+                            <button name="read" value="Read <%=records._id%>" type="submit" class="btn btn-secondary">Read</button>
+                          </form>
+                      </div>
+                    </div>
+                  </div>
+                  <% }) %>
+                </div>
+              
+              </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer-container">
+      <div class="row second-footer">
+        <div class="col-12">
+          <span>© 2022 Group 3. Agile Project</span>
+        </div>
+      </div>
+    </div>
+ 
+  <script>
+    function myFunction(id) {
+      var x = document.getElementById(id);
+      console.log(id);
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    </script>
+
+<% if (typeof errorMessage !=="undefined" ) { %>
+  <script>
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: "<%= errorMessage %>",
+    })
+    </script>
+<% } %>
+<% if (typeof successMessage !== "undefined") { %>
+  <script>
+    swal({
+      title: "Good job!",
+      text: "<%= successMessage %>",
+      icon: "success",
+    });
+    </script>
+<% } %>
+  </body>
+</html>
+

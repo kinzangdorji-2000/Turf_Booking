@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bodoni Moda', serif;
+}
+
+.welcome-section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.welcome-section .content-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.welcome-section .content-wrap .fly-in-text {
+    list-style: none;
+}
+.welcome-section.content-hidden .content-wrap .fly-in-text li:nth-child(1) {
+    transform: translate3d(-100px, 0, 0);
+}
+
+.welcome-section .content-wrap .fly-in-text li {
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    display: inline-block;
+    color: #fff;
+    opacity: 1;
+    transition: all 2s ease;
+}
+
+.welcome-section .content-wrap .fly-in-text li:last-child {
+    margin-right: 0;
+}
+
+/* .welcome-section .content-wrap .enter-button {
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #adff2f;
+    opacity: 1;
+    transition: all 1s easse 2s;
+} */
+
+.welcome-section.content-hidden .content-wrap .fly-in-text li {
+    opacity: 0;
+}
+
+.welcome-section.content-hidden .content-wrap .fly-in-text li:nth-child(1) {
+    transform: translate3d(-100px, 0, 0);
+}
+
+.welcome-section.content-hidden .content-wrap .fly-in-text li:nth-child(2) {
+    transform: translate3d(100px, 0, 0);
+}
+
+/* .welcome-section.content-hidden .content-wrap .enter-button {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+} */
+@media (min-width: 800px) {
+    .welcome-section .content-wrap .fly-in-text li:nth-child(1) { font-size: 4em; }
+    .welcome-section .content-wrap .fly-in-text li:nth-child(2) { 
+        font-size: 1em;
+        position: relative;
+        margin-left: 7rem;    
+}
+    /* .welcome-section .content-wrap .enter-button { font-size: 1em; } */
+}

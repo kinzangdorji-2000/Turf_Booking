@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyelpozhing Turf Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .form-container {
+            display: block;
+            margin: 8rem 40rem;
+        }
+        .second-footer {
+            background-color: #141A15;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            line-height: 3.5;
+            font-family: 'Epilogue';
+            font-size: 20px;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            margin: 0px;
+            flex-wrap: wrap;
+        }
+        @media(max-width:1440px) {
+            .form-container {
+                margin: 3rem 27rem;
+            }
+        }
+        @media(max-width:1200px) {
+            .form-container {
+                margin: 3rem 15rem;
+            }
+        }
+        @media(max-width:900px) {
+            .form-container {
+                margin: 1rem 10rem;
+            }
+        }
+        @media(max-width:750px) {
+            .form-container {
+                margin: 1rem 10rem;
+            }
+        }
+        @media(max-width:550px) {
+            .form-container {
+                margin: 1rem 5rem;
+            }
+            textarea{
+                width: 13rem;
+            }
+        }
+        @media(max-width:450px) {
+            .form-container {
+                margin: 1rem 5rem;
+            }
+            textarea{
+                width: 17rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="form-container">
+            <form action="/feedBackReplyForm" method="POST">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" value="<%=successMessage%>">
+                    <p style="color: red;">
+                        <%= (typeof errors!="undefined" && typeof errors.email!="undefined" ) ? errors.email.msg: "" %>
+                    </p>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" class="form-control" placeholder="Type your message here..."
+                    value="<%=(typeof inputData!='undefined') ? inputData.message: ''%>"></textarea>
+                <p style="color: red;">
+                    <%= (typeof errors!="undefined" && typeof errors.message!="undefined" ) ? errors.message.msg: "" %>
+                </p>
+                </div>
+                <button class="btn btn-secondary" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <div class="row second-footer">
+        <div class="col-12">
+          <span>© 2022 Group 3. Agile Project</span>
+        </div>
+      </div>
+
+      <script type="text/javascript">
+        window.history.forward();
+        function noBack() {
+            window.history.forward();
+        }
+    </script>
+</body>
+
+</html>

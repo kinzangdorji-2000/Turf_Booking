@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/21e58fe589.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+            />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </head>
+    <body>
+        <div class="banner">
+            <video autoplay muted loop id="myVideo">
+                <source src="Video/video.mp4" type="video/mp4">
+            </video>
+            <div class="navbar">
+                <img src="Pictures/logo1.png" alt="" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="/showBookedUserList">Ground Status</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h1>Gyalpozhing Turf Booking</h1>
+                <p>The most used type and best grass for football field in the
+                    football tournament is super C artificial turf.<br>This
+                    artificial grass model is one of the highest standard
+                    artificial grass models.</p>
+                <div>
+                    <a href="/bookingForm"><button type="button"><span></span>Book Now</button></a>
+                    <a href="/showBookedUserList"><button type="button"><span></span>Ground Status</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="turf-images">
+            <div class="swiper-container mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="Pictures/photo1.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="Pictures/photo2.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="Pictures/photo3.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="Pictures/photo4.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="Pictures/photo5.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="Pictures/photo6.jpeg" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                effect: "coverflow",
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                coverflowEffect: {
+                rotate: 20,
+                stretch: 0,
+                depth: 200,
+                modifier: 1,
+                slideShadows: true,
+                },
+                loop: true,
+                autoplay: {
+                    delay: 1000,
+                    disableOnInteraction: false,
+                }
+            });
+        </script>
+        <div class="team_text">
+            <h2>Our Team</h2>
+            <p>We are an interdisciplinary who look at your business with a
+                single shared goal in mind to create an effective
+                digital presence for your business. Working collaborately,
+                we're able to achieve results that are creative
+                and strategic, with measurable business impact. We work
+                hard, and we work smart.</p>
+        </div>
+        <div class="our_team">
+            <div class="slider">
+                <span style="--i:1;">
+                    <div class="card">
+                        <div class="lines"></div>
+                        <div class="imgBx"><img src="Pictures/pema.jpeg" alt=""></div>
+                        <div class="content1">
+                            <div class="details">
+                                <h2 class="details1">Pema Zangmo<br><span>Manager</span></h2>
+                                <div class="actionBtn">
+                                    <button><i class="fab fa-facebook-f"></i></button>
+                                    <button><i class="fab fa-twitter"></i></button>
+                                    <button><i class="fab fa-whatsapp"></i></button>
+                                    <button><i class="fab fa-youtube"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+                <span style="--i:2;">
+                    <div class="card">
+                        <div class="lines"></div>
+                        <div class="imgBx"><img src="Pictures/choda.jpeg" alt=""></div>
+                        <div class="content1">
+                            <div class="details">
+                                <h2 class="details1">Karma Choda<br><span>Finance</span></h2>
+                                <div class="actionBtn">
+                                    <button><i class="fab fa-facebook-f"></i></button>
+                                    <button><i class="fab fa-twitter"></i></button>
+                                    <button><i class="fab fa-whatsapp"></i></button>
+                                    <button><i class="fab fa-youtube"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+                <span style="--i:3;">
+                    <div class="card">
+                        <div class="lines"></div>
+                        <div class="imgBx"><img src="Pictures/cheki.jpeg" alt=""></div>
+                        <div class="content1">
+                            <div class="details">
+                                <h2 class="details1">Cheki Lhamo<br><span>Assistance</span></h2>
+                                <div class="actionBtn">
+                                    <button><i class="fab fa-facebook-f"></i></button>
+                                    <button><i class="fab fa-twitter"></i></button>
+                                    <button><i class="fab fa-whatsapp"></i></button>
+                                    <button><i class="fab fa-youtube"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+                <span style="--i:4;">
+                    <div class="card">
+                        <div class="lines"></div>
+                        <div class="imgBx"><img src="Pictures/kinzang.jpeg" alt=""></div>
+                        <div class="content1">
+                            <div class="details">
+                                <h2 class="details1">Kinzang Dori<br><span>Refere</span></h2>
+                                <div class="actionBtn">
+                                    <button><i class="fab fa-facebook-f"></i></button>
+                                    <button><i class="fab fa-twitter"></i></button>
+                                    <button><i class="fab fa-whatsapp"></i></button>
+                                    <button><i class="fab fa-youtube"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+                <span style="--i:5;">
+                    <div class="card">
+                        <div class="lines"></div>
+                        <div class="imgBx"><img src="Pictures/dg.jpeg" alt=""></div>
+                        <div class="content1">
+                            <div class="details">
+                                <h2 class="details1">Dorji Gyeltshen<br><span>Turf Owner</span></h2>
+                                <div class="actionBtn">
+                                    <button><i class="fab fa-facebook-f"></i></button>
+                                    <button><i class="fab fa-twitter"></i></button>
+                                    <button><i class="fab fa-whatsapp"></i></button>
+                                    <button><i class="fab fa-youtube"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+            </div>
+        </div>
+
+        
+        <div class="Price">
+            <!-- Pricing Section -->
+            <div class="Price-text">
+                <div class="text-content">
+                    <h2>Pricing</h2>
+                </div>
+            </div>
+            <div class="Pricing">
+                <div class="price-card">
+                    <div class="price-content">
+                        <h2 class="day">Day Time</h2>
+                        <h3 class="day1">Perfect for the season</h3>
+                        <h3 class="day2">Nu. 500/match</h3>
+                        <h3 class="day1">Up to 5 players</h3>
+                        <h3 class="day1">Collaboration features</h3>
+                        <h3 class="day1">Smart analytics</h3>
+                        <a href="/showBookedUserList">Check Status</a>
+                    </div>
+                </div>
+                <div class="price-card">
+                    <div class="price-content">
+                        <h2 class="day">Night Time</h2>
+                        <h3 class="day1">Perfect for the Health</h3>
+                        <h3 class="day2">Nu. 1000/match</h3>
+                        <h3 class="day1">Up to 5 players</h3>
+                        <h3 class="day1">Collaboration features</h3>
+                        <h3 class="day1">Smart analytics</h3>
+                        <a href="/showBookedUserList">Check Status</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="vanilla-tilt.js"></script>
+        <script>
+            VanillaTilt.init(document.querySelectorAll(".price-card"), {
+                max: 25,
+                speed: 400,
+                glare: true,
+                "max-glare": 1,
+            });
+        </script>
+        <footer>
+            <div class="row">
+                <div class="col">
+                    <img src="Pictures/logo.png" class="logo">
+                </div>
+                <div class="col">
+                    <h3>Quick Links <div class="underline"><span></span></div>
+                    </h3>
+                    <ul>
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="/showBookedUserList">Ground Status</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3>Contact Us <div class="underline"><span></span></div>
+                    </h3>
+                    <p>Gyalpozhing, Mongar</p>
+                    <p class="email-id">12190069.gcit@rub.edu.bt</p>
+                    <h4>+975 - 17284736</h4>
+                </div>
+                <div class="col">
+                    <h3>Feedback <div class="underline"><span></span></div>
+                    </h3>
+                    <form action="/home" method="POST" autocomplete="off">
+                        <i class="far fa-envelope"></i>
+                        <input type="email" name="email" placeholder="Enter your email id"
+                            required>
+                        <p style="color: red;font-size: 12px;"></p>
+                        <i class="far fa-comments"></i>
+                        <input type="text" name="message" placeholder="feedback">
+                        <p style="color: red;font-size: 12px;"></p>
+                        <button><i class="fas fa-arrow-right" type="submit"></i></button>
+                    </form>
+                    <div class="social-icons">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-whatsapp"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Gyalpozhing Turf Booking &#169; 2022 - All
+                Right Reserved</p>
+        </footer>
+          <% if (typeof errorMessage !=="undefined" ) { %>
+            <script>
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "<%= errorMessage %>",
+              })
+            </script>
+          <% } %>
+          <% if (typeof successMessage !=="undefined" ) { %>
+                <script>
+                  swal({
+                    title: "Good job!",
+                    text: "<%= successMessage %>",
+                    icon: "success",
+                  });
+                </script>
+          <% } %>
+
+          <script type="text/javascript">
+            window.history.forward();
+            function noBack() {
+                window.history.forward();
+            }
+        </script>
+    </body>
+</html>

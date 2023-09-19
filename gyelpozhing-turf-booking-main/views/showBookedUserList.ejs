@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ground Status</title>
+  <link rel="stylesheet" href="css/showBookedUserList.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo"><img src="/Pictures/logo.png" alt=""></div>
+    <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <nav class="nav-bar">
+      <ul>
+        <li>
+          <a href="/home">Home</a>
+        </li>
+        <li>
+          <a href="/showBookedUserList">Ground Status</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+    <div class="table_section">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% bookedRecords.forEach(function(records){ %>
+            <% if(records.isConfirm===true){ %>
+              <tr>
+                <td><%=records.name%></td>
+                <% const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] %>
+                <% const dates = records.date %>
+                <% const date = dates.split('-') %>
+                <% const year = date[0] %>
+                <% const month = date[1] %>
+                <% const date1 = date[2] %>
+                <td><%=`${date1}-${months[month]}-${year}`%></td>
+                <% const times = records.time %>
+                <% const time = times.split(':') %>
+                <% const time1 = time[0] %>
+                <% const minutes = time[1] %>
+                <% const hoursForClock = time1 >= 13 ? time1 % 12 : time1 %>
+                <% const ampm = time1 >= 12 ? 'PM' : 'AM' %>
+                <td><%= `${hoursForClock}:${minutes < 10 ? `${minutes}` : minutes} ${ampm}` %></td>
+                <% if(records.isConfirm===true){ %>
+                  <% var status="Booked" %>
+                <% }else{ %>
+                    <% var status="Pending" %>
+                <% } %>
+                <td><%=status%></td>
+              </tr>
+            <% } %>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  <footer>
+    <p>Gyalpozhing Turf Booking © 2022 . All Rights Reserved</p>
+  </footer>
+  <script>
+    hamburger = document.querySelector(".hamburger");
+    hamburger.onclick = function () {
+      navBar = document.querySelector(".nav-bar");
+      navBar.classList.toggle("active");
+    }
+  </script>
+
+<script type="text/javascript">
+  window.history.forward();
+  function noBack() {
+      window.history.forward();
+  }
+</script>
+</body>
+
+</html>

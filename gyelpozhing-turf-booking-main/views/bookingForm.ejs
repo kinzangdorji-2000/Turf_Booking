@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <title>Booking Form</title>
+    <link rel="stylesheet" href="css/bookingForm.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css"
+    type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"
+    type="text/javascript"></script>
+    <body>
+        <div class="box">
+            <div class="form">
+                <form action="/bookingForm" method="POST" autocomplete="off">
+                    <h2>Booking Form</h2>
+                    <div class="inputBox">
+                        <input type="text" name="name" value="<%=(typeof inputData!='undefined') ? inputData.name: ''%>">
+                        <span>Full Name</span>
+                        <i></i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="email" name="email" value="<%=(typeof inputData!='undefined') ? inputData.email: ''%>">
+                        <span>Email</span>
+                        <i></i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="number" name="phone" value="<%=(typeof inputData!='undefined') ? inputData.phone: ''%>">
+                        <span>Phone Number</span>
+                        <i></i>
+                    </div>
+                    <div class="inputBox">
+                        <input id="txtDate" type="date" name="date" value="<%=(typeof inputData!='undefined') ? inputData.date: ''%>">
+                        <span>Date</span>
+                        <i></i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="time" name="time" value="<%=(typeof inputData!='undefined') ? inputData.time: ''%>">
+                        <span>Time</span>
+                        <i></i>
+                    </div>
+                    <input type="submit" value="Submit">
+                    <div class="links">
+                        <a href="home">Back to Home</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <% if (typeof errorMessage !=="undefined" ) { %>
+            <script>
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "<%= errorMessage %>",
+              })
+              </script>
+          <% } %>
+          <% if (typeof successMessage !== "undefined") { %>
+            <script>
+              swal({
+                title: "Good job!",
+                text: "<%= successMessage %>",
+                icon: "success",
+              });
+              </script>
+          <% } %>
+        <% if ((typeof errors!="undefined" && typeof errors.name!="undefined") ? errors.name.msg: "") { %>
+          <script>
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: "<%= errors.name.msg %>",
+            })
+            </script>
+        <% } %>
+        <% if ((typeof errors!="undefined" && typeof errors.email!="undefined") ? errors.email.msg: "") { %>
+          <script>
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: "<%= errors.email.msg %>",
+            })
+            </script>
+        <% } %>
+        <% if ((typeof errors!="undefined" && typeof errors.phone!="undefined") ? errors.phone.msg: "") { %>
+            <script>
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "<%= errors.phone.msg %>",
+              })
+              </script>
+          <% } %>
+          <% if ((typeof errors!="undefined" && typeof errors.date!="undefined") ? errors.date.msg: "") { %>
+            <script>
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "<%= errors.date.msg %>",
+              })
+              </script>
+          <% } %>
+          <% if ((typeof errors!="undefined" && typeof errors.time!="undefined") ? errors.time.msg: "") { %>
+            <script>
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "<%= errors.time.msg %>",
+              })
+              </script>
+          <% } %>
+            <script type="text/javascript">
+            $(function () {
+              $('#txtDate').datepicker({
+                format: "dd/mm/yyyy"
+              });
+            });
+          </script>
+
+        <script type="text/javascript">
+          window.history.forward();
+          function noBack() {
+              window.history.forward();
+          }
+        </script>
+    </body>
+</html>
